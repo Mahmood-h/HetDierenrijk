@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">Welkom {{ user }}</h1>
+    <br><br>
+    <p class="text-center"> Jij bent een admin <br> Jouw dierenland heet Pleundieren </p>
+
+    <br><br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Dier</th>
+            <th scope="col">Beschrijving</th>
+        </tr>
+
+        </thead>
+        <tbody>
+        {% for dieren in dieren %}
+            <tr>
+                <td>{{ dieren.name }}</td>
+                <td>{{ dieren.description }}</td>
+                <td><button type="button" class="btn btn-danger">Verwijderen</button></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a class="btn btn-success" href="{{ path('app_insert') }}" role="button">Toevoegen</a>
+
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MemberController!{% endblock %}
+
+{% block body %}
+<h1 class="text-center">Welkom dit is de Memberpagina</h1>
+    <h4 class="text-center">{{ user }}</h4>
+    <br><br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Dier</th>
+            <th scope="col">Beschrijving</th>
+        </tr>
+
+        </thead>
+        <tbody>
+        {% for dieren in dieren %}
+        <tr>
+            <td>{{ dieren.name }}</td>
+            <td>{{ dieren.description }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
